@@ -6,6 +6,7 @@ const Task = require('./models/Task');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
 app.get("/", (req, res) => {
   res.send("Server is running!");
 });
@@ -76,6 +77,8 @@ app.put('/update-task/:id', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
